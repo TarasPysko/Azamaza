@@ -10,7 +10,8 @@ const DateInput = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInp
     <input
       {...props}
       ref={ref}
-      className="font-sans min-w-0 flex-1 bg-transparent px-[8px] text-sm font-normal leading-5 tracking-normal text-[#4A5565] placeholder:text-[#4A5565] outline-none"
+      className="font-sans min-w-0 flex-1 w-full bg-transparent px-[8px] text-[16px] font-normal leading-5 tracking-normal text-[#4A5565] placeholder:text-[#4A5565] outline-none"
+      style={{ maxWidth: "100%" }}
     />
   )
 );
@@ -155,7 +156,7 @@ export function SearchBlock() {
                 setDestination(e.target.value);
                 setError(null);
               }}
-              className="font-sans min-w-0 flex-1 bg-transparent px-[8px] text-sm font-normal leading-5 tracking-normal text-[#4A5565] placeholder:text-[#4A5565] outline-none"
+              className="font-sans min-w-0 flex-1 bg-transparent px-[8px] text-[16px] font-normal leading-5 tracking-normal text-[#4A5565] placeholder:text-[#4A5565] outline-none"
             />
             {destination && (
               <span className="flex h-10 w-10 shrink-0 items-center justify-center">
@@ -200,7 +201,7 @@ export function SearchBlock() {
                 placeholder="A service, a meeting, an offer"
                 value={serviceType}
                 readOnly
-                className="font-sans min-w-0 flex-1 cursor-pointer bg-transparent px-[8px] text-sm font-normal leading-5 tracking-normal text-[#4A5565] placeholder:text-[#4A5565] outline-none"
+                className="font-sans min-w-0 flex-1 cursor-pointer bg-transparent px-[8px] text-[16px] font-normal leading-5 tracking-normal text-[#4A5565] placeholder:text-[#4A5565] outline-none"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               />
               <span className="flex h-10 w-10 shrink-0 items-center justify-center">
@@ -252,7 +253,7 @@ export function SearchBlock() {
                 className="shrink-0"
               />
             </span>
-            <div className="flex-1">
+            <div className="flex-1 min-w-0 overflow-visible">
               <DatePicker
                 selected={selectedDate}
                 onChange={(date: Date | null) => {
